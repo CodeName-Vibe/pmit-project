@@ -4,4 +4,6 @@
 
 body * {
   display: flex;
+  font-family: 'Poppins', sans-serif;
+  user-select: none;
 }
