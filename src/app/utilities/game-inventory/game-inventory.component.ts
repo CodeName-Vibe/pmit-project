@@ -10,4 +10,5 @@ import { SkinLotComponent } from "../skin-lot/skin-lot.component";
 })
 export class GameInventoryComponent {
   skins = [,,,,,,,,,,,,,,,,,,,]
+  totalPrice = 1849;
 }
