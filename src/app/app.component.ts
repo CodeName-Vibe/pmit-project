@@ -9,6 +9,10 @@ import { CaseOpeningComponent } from './games/case-opening/case-opening.componen
 import { MineFieldComponent } from './games/mine-field/mine-field.component';
 import { RouletteComponent } from './games/roulette/roulette.component';
 import { SkinUpgradeComponent } from './games/skin-upgrade/skin-upgrade.component';
+import { CaseLobbyComponent } from './games/case-lobby/case-lobby.component';
+import { CaseSelectionComponent } from './games/case-selection/case-selection.component';
+import { CaseLotComponent } from './utilities/case-lot/case-lot.component';
+import { CaseFightSelectionComponent } from './games/case-fight-selection/case-fight-selection.component';
 
 @Component({
   selector: 'app-root',
@@ -24,8 +28,19 @@ import { SkinUpgradeComponent } from './games/skin-upgrade/skin-upgrade.componen
     CaseOpeningComponent, 
     MineFieldComponent, 
     RouletteComponent, 
-    SkinUpgradeComponent
+    SkinUpgradeComponent,
+    CaseLobbyComponent,
+    CaseSelectionComponent,
+    CaseLotComponent,
+    CaseFightSelectionComponent
   ]
 })
 export class AppComponent {
+  status = false;
+  priseWon() {
+    this.status = true;
+    setTimeout(() => {
+      this.status = false;
+    }, 2500);
+  }
 }

@@ -8,7 +8,7 @@ body * {
   user-select: none;
 }
 
-app-roulette, app-case-opening, app-mine-field, app-case-fight, app-skin-upgrade, app-deposit-withdraw, app-game-inventory, app-shop-inventory {
+app-roulette, app-case-opening, app-mine-field, app-case-fight, app-skin-upgrade, app-deposit-withdraw, app-game-inventory, app-shop-inventory, app-case-selection, app-case-lobby {
   width: 100%;
   height: 100%;
   flex-direction: column;
