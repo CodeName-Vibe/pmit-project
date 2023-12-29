@@ -1,1 +1,24 @@
-<div class="w-[242px] h-[306px] bg-gradient-to-b from-[rgba(61,105,157,0.20)] to-[rgba(37,57,96,0.80)] border-[2px] border-[#1B2838] m-[18px] hover:border-[#FFA205]"></div>
+<div (click)="toggleSelection()" class="w-[242px] h-[306px] bg-gradient-to-b border-[3px] m-[18px] cursor-pointer flex-col items-center justify-center"
+[ngClass]="{
+  'border-[#1B2838]': !skin.isSelected,
+  'border-[#FFA205]': skin.isSelected,
+  'from-[rgba(157,61,61,0.2)]': rarity[0],
+  'to-[rgba(96,37,37,0.8)]': rarity[0],
+  'from-[rgba(157,61,147,0.2)]': rarity[1],
+  'to-[rgba(96,37,87,0.8)]': rarity[1],
+  'from-[rgba(92,61,157,0.2)]': rarity[2],
+  'to-[rgba(63,37,96,0.8)]': rarity[2],
+  'from-[rgba(61,105,157,0.2)]': rarity[3],
+  'to-[rgba(37,57,96,0.8)]': rarity[3],
+}">
+  <h3 class="text-[#FDFDFD] text-[22px] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] px-[10px] py-[5px]"
+  [ngClass]="{
+    'bg-[#942222]': rarity[0],
+    'bg-[#94226c]': rarity[1],
+    'bg-[#682294]': rarity[2],
+    'bg-[#222494]': rarity[3],
+  }">{{ skin.name }}</h3>
+  <h3 class="text-[#FDFDFD] text-[18px] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] mt-[5px]">{{ skin.weapon }}</h3>
+  <img [src]="skin.image" class="w-[210px] h-[150px]">
+  <p class="text-[#64E562] text-[32px] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]">{{ skin.price }}$</p>
+</div>

@@ -1,19 +1,37 @@
-<div class="h-[316px] bg-[#1D2D47] items-center justify-around">
-    <div class="w-[175px] h-[248px] bg-[#5C7284] justify-center items-center ml-[50px]">
-        <span class="text-[30px] text-[#fff]">chose skin</span>
+<div class="bg-[#1D2D47] items-center justify-center py-[20px]">
+  <div (click)="skinSelection = true" class="w-[242px] h-[306px] bg-[#5C7284] justify-center items-center border-[#FFFFFF] cursor-pointer">
+      <span class="text-[30px] text-[#fff]">chose skin</span>
+  </div>
+  <div class="flex-col items-center mx-[40px]">
+    <div>
+      <button (click)="modeSelect(0)" class="w-[72.8px] h-[51px] justify-center items-center text-[25px] text-[#000] font-[500] mr-[6px]"
+      [ngClass]="{
+        'bg-[#D9D9D9]': status[0],
+        'bg-[#a3a0a0]': !status[0],
+      }">X2</button>
+      <button (click)="modeSelect(1)" class="w-[72.8px] h-[51px] bg-[#D9D9D9] justify-center items-center text-[25px] text-[#000] font-[500] mr-[6px]"
+      [ngClass]="{
+        'bg-[#D9D9D9]': status[1],
+        'bg-[#a3a0a0]': !status[1],
+      }">X3</button>
+      <button (click)="modeSelect(2)" class="w-[72.8px] h-[51px] bg-[#D9D9D9] justify-center items-center text-[25px] text-[#000] font-[500] mr-[6px]"
+      [ngClass]="{
+        'bg-[#D9D9D9]': status[2],
+        'bg-[#a3a0a0]': !status[2],
+      }">X5</button>
+      <button (click)="modeSelect(3)" class="w-[72.8px] h-[51px] bg-[#D9D9D9] justify-center items-center text-[25px] text-[#000] font-[500]"
+      [ngClass]="{
+        'bg-[#D9D9D9]': status[3],
+        'bg-[#a3a0a0]': !status[3],
+      }">X8</button>
     </div>
-    <div class="flex-col items-center">
-        <div>
-            <button class="w-[51px] h-[51px] bg-[#D9D9D9] justify-center items-center text-[30px] text-[#000] font-[400] mr-[6px]">X2</button>
-            <button class="w-[51px] h-[51px] bg-[#D9D9D9] justify-center items-center text-[30px] text-[#000] font-[400] mr-[6px]">X3</button>
-            <button class="w-[51px] h-[51px] bg-[#D9D9D9] justify-center items-center text-[30px] text-[#000] font-[400] mr-[6px]">X5</button>
-            <button class="w-[51px] h-[51px] bg-[#D9D9D9] justify-center items-center text-[30px] text-[#000] font-[400]">X8</button>
-        </div>
-        <button class="w-[212px] h-[66px] bg-[#4ED755] justify-center items-center mt-[12px]"><span class="text-[#fff] text-[30px] font-[500] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]">Upgrade</span></button>
-        <span class="text-[#fff] text-[30px] font-[400] mt-[27px]">chance</span>
-    </div>
-    <div class="mr-[50px]">
-        <img src="../../../assets/SkinUpWinItem.svg" alt="">
-    </div>
+    <button (click)="runUpgrade(mode)" class="w-[310px] h-[66px] bg-[#4ED755] justify-center items-center mt-[12px] hover:bg-[#68f26f]">
+      <span class="text-[#fff] text-[30px] font-[500] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]">Upgrade</span>
+    </button>
+    <span class="text-[#fff] text-[22px] font-[400] mt-[18px]">Chance: {{ chance[mode] }}%</span>
+  </div>
+  <div class="w-[242px] h-[306px] bg-[#5C7284] justify-center items-center">
+    <span class="text-[30px] text-[#fff]">reward</span>
+  </div>
 </div>
 <app-game-inventory></app-game-inventory>

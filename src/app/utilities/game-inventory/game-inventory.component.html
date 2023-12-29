@@ -4,10 +4,10 @@
       <span class="text-white text-[35px] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]">Sort</span>
     </div>
     <div class="bg-[#1B2838] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] px-[20px] py-[10px]">
-      <span class="text-white text-[36px] font-medium">{{ totalPrice }}$</span>
+      <span class="text-white text-[36px] font-medium">{{ getTotalPrice() }}$</span>
     </div>
   </div>
   <div class="flex-wrap justify-center">
-    <app-skin-lot *ngFor="let skin of skins"></app-skin-lot>
+    <app-skin-lot *ngFor="let skin of skins; index as i" [skin]="skin"></app-skin-lot>
   </div>
 </div>

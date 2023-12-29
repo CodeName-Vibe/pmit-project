@@ -1,14 +1,25 @@
 <div class="bg-gradient-to-b from-[#C8810B] to-[#625D5C] h-[241px] w-full flex-col">
-    <div class="mt-[24px] ml-[51px]">
-        <button class="w-[213px] h-[92px] bg-[#171D25] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] justify-center items-center text-[#fff] text-[22px] font-[400] mr-[10px]">Connect steam</button>
-        <input type="text" placeholder="https://steamcommunity.com/id/grhx5354gr/" class="bg-[#1B2838] h-[91px] w-[1073px] border-none drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] text-[24px] text-[#fff] font-[400] pl-[20px]">
-    </div>
-    <div class="items-end mt-[20px]">
-        <button class="bg-[#FFA205] w-[189px] h-[85px] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] justify-center items-center text-[24px] text-[#000] font-[500]">Ant CaS2ino</button>
-        <button class="w-[188px] h-[69px] bg-[#1B2838] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] justify-center items-center text-[24px] text-[#fff] font-[500]">Steam</button>
-    </div>
+  <div class="mt-[24px] ml-[51px]">
+    <button class="w-[243px] h-[92px] bg-[#171D25] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] justify-center items-center text-[#fff] text-[22px] font-[400] mr-[10px] hover:bg-[#252e3b]">Connect Steam</button>
+    <input type="text" placeholder="https://steamcommunity.com/id/grhx5354gr/" class="bg-[#1B2838] h-[91px] w-[1043px] border-none drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] tex[24px] text-[#fff] font-[400] pl-[20px]">
+  </div>
+  <div class="items-end mt-[20px]">
+    <button (click)="inOutStatus = 1" [ngClass]="{
+      'h-[85px]': inOutStatus,
+      'h-[69px]': !inOutStatus
+    }"
+       class="bg-[#FFA205] w-[189px] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] justify-center items-center text-[24px] text-[#000] font-[500] hover:bg-[#faad2a]">Ant CaS2ino</button>
+    <button (click)="inOutStatus = 0" [ngClass]="{
+      'h-[85px]': !inOutStatus,
+      'h-[69px]': inOutStatus
+    }"
+      class="w-[188px] bg-[#1B2838] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] justify-center items-center text-[24px] text-[#fff] font-[500] hover:bg-[#213247]">Steam</button>
+    <div class="h-[85px]"></div>
+  </div>
 </div>
-<div class="w-full justify-center">
-    <button class="w-[248px] h-[128px] bg-[#4ED755] justify-center items-center drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] mt-[-64px]"><span class="drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] text-[40px] font-[500] text-[#fff]">Withdraw</span></button>
+<div class="w-full justify-center bg-[#535353] relative">
+  <button class="absolute w-[248px] h-[128px] bg-[#4ED755] justify-center items-center drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] mt-[-64px] hover:bg-[#68f26f]">
+    <span class="drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] text-[40px] font-[500] text-[#fff]">{{ statusText[inOutStatus] }}</span>
+  </button>
 </div>
 <app-shop-inventory></app-shop-inventory>

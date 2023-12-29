@@ -2,10 +2,15 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body * {
   display: flex;
   font-family: 'Poppins', sans-serif;
   user-select: none;
+  transition-duration: 300ms;
 }
 
 app-roulette, app-case-opening, app-mine-field, app-case-fight, app-skin-upgrade, app-deposit-withdraw, app-game-inventory, app-shop-inventory, app-case-selection, app-case-lobby {

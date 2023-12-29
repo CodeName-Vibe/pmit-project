@@ -1,69 +1,249 @@
 <div class="w-full flex-col">
-    <div class="h-[303px] w-full bg-[#353535] justify-around items-center ">
-        <div class="w-[156px] h-[248px] bg-[#1F2C32] justify-center items-center"><img src="../../../assets/rulet1.svg" alt=""></div>
-        <div class="w-[156px] h-[248px] bg-[#544B3C] justify-center items-center"><img src="../../../assets/rulet2.svg" alt=""></div>
-        <div class="w-[156px] h-[248px] bg-[#1F2C32] justify-center items-center"><img src="../../../assets/rulet1.svg" alt=""></div>
-        <div class="w-[156px] h-[248px] bg-[#544B3C] justify-center items-center"><img src="../../../assets/rulet2.svg" alt=""></div>
-        <div class="w-[156px] h-[248px] bg-[#1F2C32] justify-center items-center"><img src="../../../assets/rulet1.svg" alt=""></div>
-        <div class="w-[156px] h-[248px] justify-center items-center"><img src="../../../assets/rulet3.svg" alt=""></div>
-        <div class="w-[156px] h-[248px] bg-[#544B3C] justify-center items-center"><img src="../../../assets/rulet2.svg" alt=""></div>
-
+  <div class="h-[212.5px] w-full bg-[#222222] justify-evenly items-center relative overflow-hidden border-[#222222] border-[10px]">
+    <div class="absolute w-[70px] h-[70px] bg-pin bg-no-repeat bg-cover z-[3] top-[-27px] rotate-[-29deg] invert left-[47.8%]"></div>
+    <div class="absolute w-[70px] h-[70px] bg-pin bg-no-repeat bg-cover z-[3] bottom-[-27px] rotate-[29deg] invert left-[47.8%]"></div>
+    <div class="absolute w-[192.5px] h-[192.5px] justify-center items-center"
+    [ngClass]="{
+      'left-[-202.5px]': status.animation,
+      'left-0': !status.animation,
+      'duration-[500ms]': status.d500 && status.animation,
+      'duration-[450ms]': status.d450 && status.animation,
+      'duration-[400ms]': status.d400 && status.animation,
+      'duration-[350ms]': status.d350 && status.animation,
+      'duration-[300ms]': status.d300 && status.animation,
+      'duration-[250ms]': status.d250 && status.animation,
+      'duration-[200ms]': status.d200 && status.animation,
+      'duration-[150ms]': status.d150 && status.animation,
+      'duration-[100ms]': status.d100 && status.animation,
+      'duration-[50ms]': status.d50 && status.animation,
+      'duration-0': !status.animation,
+      'bg-[#1F2C32]': rolls[0].tBlue,
+      'bg-[#544B3C]': rolls[0].tBrown,
+      'bg-[#C5AC55]': rolls[0].tYellow,
+    }">
+      <div class="w-[130px] h-[130px] bg-no-repeat bg-cover duration-0"
+      [ngClass]="{
+        'bg-tBlue': rolls[0].tBlue,
+        'bg-tBrown': rolls[0].tBrown,
+        'bg-tYellow': rolls[0].tYellow,
+      }"></div>
     </div>
-    <div class="h-[256px] w-full bg-gradient-to-b from-[#c7820a] to-[#1b2838] items-center flex-col">
-        <div class="mt-[9px]">
-            <div class="justify-around items-center bg-[#1D2D47] h-[62px] w-[729px] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]">
-                <span class="text-[30px] text-[#fff] font-[400] ml-[8px]">History of rolls</span>
-                <div>
-                    <img src="../../../assets/rulet2.svg" alt="" class="w-[64px] h-[64px]">
-                    <img src="../../../assets/rulet1.svg" alt="" class="w-[64px] h-[64px]">
-                    <img src="../../../assets/rulet1.svg" alt="" class="w-[64px] h-[64px]">
-                    <img src="../../../assets/rulet2.svg" alt="" class="w-[64px] h-[64px]">
-                    <img src="../../../assets/rulet1.svg" alt="" class="w-[64px] h-[64px]">
-                    <img src="../../../assets/rulet1.svg" alt="" class="w-[64px] h-[64px]">
-                    <img src="../../../assets/rulet1.svg" alt="" class="w-[64px] h-[64px]">
-                    <img src="../../../assets/rulet1.svg" alt="" class="w-[64px] h-[64px]">
-                </div> 
-            </div>
-            <div class="justify-around items-center bg-[#1D2D47] h-[62px] w-[592px] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] ml-[9px]">
-                <span class="text-[#fff] text-[29px] font-[400]">Last of 100</span>
-                <img src="../../../assets/rulet1.svg" alt="" class="w-[64px] h-[64px]">
-                <span class="text-[#fff] text-[29px] font-[400]">39</span>
-                <img src="../../../assets/rulet4.svg" alt="" class="w-[64px] h-[64px]">
-                <span class="text-[#fff] text-[29px] font-[400]">9</span>
-                <img src="../../../assets/rulet2.svg" alt="" class="w-[64px] h-[64px]">
-                <span class="text-[#fff] text-[29px] font-[400]">54</span>
-            </div>
-        </div>
-        <div>
-            <button class="w-[429px] h-[142px] bg-[#1F2C32] justify-around items-center mt-[20px]">
-                <img src="../../../assets/rulet1.svg" alt="" class="w-[109px] h-[109px]">
+    <div class="absolute w-[192.5px] h-[192.5px] bg-[#1F2C32] justify-center items-center"
+    [ngClass]="{
+      'left-[202.5px]': !status.animation,
+      'left-0': status.animation,
+      'duration-[500ms]': status.d500 && status.animation,
+      'duration-[450ms]': status.d450 && status.animation,
+      'duration-[400ms]': status.d400 && status.animation,
+      'duration-[350ms]': status.d350 && status.animation,
+      'duration-[300ms]': status.d300 && status.animation,
+      'duration-[250ms]': status.d250 && status.animation,
+      'duration-[200ms]': status.d200 && status.animation,
+      'duration-[150ms]': status.d150 && status.animation,
+      'duration-[100ms]': status.d100 && status.animation,
+      'duration-[50ms]': status.d50 && status.animation,
+      'duration-0': !status.animation,
+      'bg-[#1F2C32]': rolls[1].tBlue,
+      'bg-[#544B3C]': rolls[1].tBrown,
+      'bg-[#C5AC55]': rolls[1].tYellow,
+    }">
+      <div class="w-[130px] h-[130px] bg-no-repeat bg-cover duration-0"
+      [ngClass]="{
+        'bg-tBlue': rolls[1].tBlue,
+        'bg-tBrown': rolls[1].tBrown,
+        'bg-tYellow': rolls[1].tYellow,
+      }"></div>
+    </div>
+    <div class="absolute w-[192.5px] h-[192.5px] bg-[#1F2C32] justify-center items-center"
+    [ngClass]="{
+      'left-[405px]': !status.animation,
+      'left-[202.5px]': status.animation,
+      'duration-[500ms]': status.d500 && status.animation,
+      'duration-[450ms]': status.d450 && status.animation,
+      'duration-[400ms]': status.d400 && status.animation,
+      'duration-[350ms]': status.d350 && status.animation,
+      'duration-[300ms]': status.d300 && status.animation,
+      'duration-[250ms]': status.d250 && status.animation,
+      'duration-[200ms]': status.d200 && status.animation,
+      'duration-[150ms]': status.d150 && status.animation,
+      'duration-[100ms]': status.d100 && status.animation,
+      'duration-[50ms]': status.d50 && status.animation,
+      'duration-0': !status.animation,
+      'bg-[#1F2C32]': rolls[2].tBlue,
+      'bg-[#544B3C]': rolls[2].tBrown,
+      'bg-[#C5AC55]': rolls[2].tYellow,
+    }">
+      <div class="w-[130px] h-[130px] bg-no-repeat bg-cover duration-0"
+      [ngClass]="{
+        'bg-tBlue': rolls[2].tBlue,
+        'bg-tBrown': rolls[2].tBrown,
+        'bg-tYellow': rolls[2].tYellow,
+      }"></div>
+    </div>
+    <div class="absolute w-[192.5px] h-[192.5px] bg-[#1F2C32] justify-center items-center"
+    [ngClass]="{
+      'left-[607.5px]': !status.animation,
+      'left-[405px]': status.animation,
+      'duration-[500ms]': status.d500 && status.animation,
+      'duration-[450ms]': status.d450 && status.animation,
+      'duration-[400ms]': status.d400 && status.animation,
+      'duration-[350ms]': status.d350 && status.animation,
+      'duration-[300ms]': status.d300 && status.animation,
+      'duration-[250ms]': status.d250 && status.animation,
+      'duration-[200ms]': status.d200 && status.animation,
+      'duration-[150ms]': status.d150 && status.animation,
+      'duration-[100ms]': status.d100 && status.animation,
+      'duration-[50ms]': status.d50 && status.animation,
+      'duration-0': !status.animation,
+      'bg-[#1F2C32]': rolls[3].tBlue,
+      'bg-[#544B3C]': rolls[3].tBrown,
+      'bg-[#C5AC55]': rolls[3].tYellow,
+    }">
+      <div class="w-[130px] h-[130px] bg-no-repeat bg-cover duration-0"
+      [ngClass]="{
+        'bg-tBlue': rolls[3].tBlue,
+        'bg-tBrown': rolls[3].tBrown,
+        'bg-tYellow': rolls[3].tYellow,
+      }"></div>
+    </div>
+    <div class="absolute w-[192.5px] h-[192.5px] bg-[#1F2C32] justify-center items-center"
+    [ngClass]="{
+      'right-[405px]': !status.animation,
+      'right-[607.5px]': status.animation,
+      'duration-[500ms]': status.d500 && status.animation,
+      'duration-[450ms]': status.d450 && status.animation,
+      'duration-[400ms]': status.d400 && status.animation,
+      'duration-[350ms]': status.d350 && status.animation,
+      'duration-[300ms]': status.d300 && status.animation,
+      'duration-[250ms]': status.d250 && status.animation,
+      'duration-[200ms]': status.d200 && status.animation,
+      'duration-[150ms]': status.d150 && status.animation,
+      'duration-[100ms]': status.d100 && status.animation,
+      'duration-[50ms]': status.d50 && status.animation,
+      'duration-0': !status.animation,
+      'bg-[#1F2C32]': rolls[4].tBlue,
+      'bg-[#544B3C]': rolls[4].tBrown,
+      'bg-[#C5AC55]': rolls[4].tYellow,
+    }">
+      <div class="w-[130px] h-[130px] bg-no-repeat bg-cover duration-0"
+      [ngClass]="{
+        'bg-tBlue': rolls[4].tBlue,
+        'bg-tBrown': rolls[4].tBrown,
+        'bg-tYellow': rolls[4].tYellow,
+      }"></div>
+    </div>
+    <div class="absolute w-[192.5px] h-[192.5px] bg-[#1F2C32] justify-center items-center"
+    [ngClass]="{
+      'right-[202.5px]': !status.animation,
+      'right-[405px]': status.animation,
+      'duration-[500ms]': status.d500 && status.animation,
+      'duration-[450ms]': status.d450 && status.animation,
+      'duration-[400ms]': status.d400 && status.animation,
+      'duration-[350ms]': status.d350 && status.animation,
+      'duration-[300ms]': status.d300 && status.animation,
+      'duration-[250ms]': status.d250 && status.animation,
+      'duration-[200ms]': status.d200 && status.animation,
+      'duration-[150ms]': status.d150 && status.animation,
+      'duration-[100ms]': status.d100 && status.animation,
+      'duration-[50ms]': status.d50 && status.animation,
+      'duration-0': !status.animation,
+      'bg-[#1F2C32]': rolls[5].tBlue,
+      'bg-[#544B3C]': rolls[5].tBrown,
+      'bg-[#C5AC55]': rolls[5].tYellow,
+    }">
+      <div class="w-[130px] h-[130px] bg-no-repeat bg-cover duration-0"
+      [ngClass]="{
+        'bg-tBlue': rolls[5].tBlue,
+        'bg-tBrown': rolls[5].tBrown,
+        'bg-tYellow': rolls[5].tYellow,
+      }"></div>
+    </div>
+    <div class="absolute w-[192.5px] h-[192.5px] bg-[#1F2C32] justify-center items-center right-0"
+    [ngClass]="{
+      'right-0': !status.animation,
+      'right-[202.5px]': status.animation,
+      'duration-[500ms]': status.d500 && status.animation,
+      'duration-[450ms]': status.d450 && status.animation,
+      'duration-[400ms]': status.d400 && status.animation,
+      'duration-[350ms]': status.d350 && status.animation,
+      'duration-[300ms]': status.d300 && status.animation,
+      'duration-[250ms]': status.d250 && status.animation,
+      'duration-[200ms]': status.d200 && status.animation,
+      'duration-[150ms]': status.d150 && status.animation,
+      'duration-[100ms]': status.d100 && status.animation,
+      'duration-[50ms]': status.d50 && status.animation,
+      'duration-0': !status.animation,
+      'bg-[#1F2C32]': rolls[6].tBlue,
+      'bg-[#544B3C]': rolls[6].tBrown,
+      'bg-[#C5AC55]': rolls[6].tYellow,
+    }">
+      <div class="w-[130px] h-[130px] bg-no-repeat bg-cover duration-0"
+      [ngClass]="{
+        'bg-tBlue': rolls[6].tBlue,
+        'bg-tBrown': rolls[6].tBrown,
+        'bg-tYellow': rolls[6].tYellow,
+      }"></div>
+    </div>
+    <!-- spare -->
+    <div class="absolute w-[192.5px] h-[192.5px] bg-[#1F2C32] justify-center items-center"
+    [ngClass]="{
+      'right-[-202.5px]': !status.animation,
+      'right-0': status.animation,
+      'duration-[500ms]': status.d500 && status.animation,
+      'duration-[450ms]': status.d450 && status.animation,
+      'duration-[400ms]': status.d400 && status.animation,
+      'duration-[350ms]': status.d350 && status.animation,
+      'duration-[300ms]': status.d300 && status.animation,
+      'duration-[250ms]': status.d250 && status.animation,
+      'duration-[200ms]': status.d200 && status.animation,
+      'duration-[150ms]': status.d150 && status.animation,
+      'duration-[100ms]': status.d100 && status.animation,
+      'duration-[50ms]': status.d50 && status.animation,
+      'duration-0': !status.animation,
+      'bg-[#1F2C32]': rolls[7].tBlue,
+      'bg-[#544B3C]': rolls[7].tBrown,
+      'bg-[#C5AC55]': rolls[7].tYellow,
+    }">
+      <div class="w-[130px] h-[130px] bg-no-repeat bg-cover duration-0"
+      [ngClass]="{
+        'bg-tBlue': rolls[7].tBlue,
+        'bg-tBrown': rolls[7].tBrown,
+        'bg-tYellow': rolls[7].tYellow,
+      }"></div>
+    </div>
+  </div>
+
+  <div class="w-full bg-[#5E5D5D] items-center flex-col">
+        <div class="my-[20px]">
+            <button (click)="blueClicked()" class="w-[440px] h-[142px] bg-[#1F2C32] justify-around items-center">
+                <div class="w-[109px] h-[109px] bg-tBlue bg-no-repeat bg-cover"></div>
                 <div class="flex-col items-center">
                     <div>
                         <span class="text-[40px] text-[#fff] font-[600]">Place Bet</span>
                         <span class="text-[36px] font-[700] text-[#00B2FF] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] ml-[10px] pt-[5px]">X2</span>
                     </div>
-                    <span class="text-[28px] font-[500] text-[#5BEA58]">15789$</span>
+                    <span class="text-[28px] font-[500] text-[#5BEA58]">{{ bets.blue }}$</span>
                 </div>
             </button>
-            <button class="w-[429px] h-[142px] bg-[#C5AC55] justify-around items-center mt-[20px] ml-[14px]">
-                <img src="../../../assets/rulet4.svg" alt="" class="w-[109px] h-[109px]">
-                <div class="flex-col items-center">
-                    <div>
-                        <span class="text-[40px] text-[#fff] font-[600]">Place Bet</span>
-                        <span class="text-[36px] font-[700] text-[#FBFF2E] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] ml-[10px] pt-[5px]">X13</span>
-                    </div>
-                    <span class="text-[28px] font-[500] text-[#1B501A]">15789$</span>
+            <button (click)="yellowClicked()" class="w-[440px] h-[142px] bg-[#C5AC55] justify-around items-center mx-[20px]">
+              <div class="w-[109px] h-[109px] bg-tYellow bg-no-repeat bg-cover"></div>
+              <div class="flex-col items-center">
+                <div>
+                  <span class="text-[40px] text-[#fff] font-[600]">Place Bet</span>
+                  <span class="text-[36px] font-[700] text-[#FBFF2E] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] ml-[10px] pt-[5px]">X14</span>
                 </div>
+                <span class="text-[28px] font-[500] text-[#1B501A]">{{ bets.yellow }}$</span>
+              </div>
             </button>
-            <button class="w-[429px] h-[142px] bg-[#544B3C] justify-around items-center mt-[20px] ml-[14px]">
-                <img src="../../../assets/rulet2.svg" alt="" class="w-[109px] h-[109px]">
-                <div class="flex-col items-center">
-                    <div>
-                        <span class="text-[40px] text-[#fff] font-[600]">Place Bet</span>
-                        <span class="text-[36px] font-[700] text-[#FAA92F] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] ml-[10px] pt-[5px]">X2</span>
-                    </div>
-                    <span class="text-[28px] font-[500] text-[#5BEA58]">15789$</span>
+            <button (click)="brownClicked()" class="w-[440px] h-[142px] bg-[#544B3C] justify-around items-center">
+              <div class="w-[109px] h-[109px] bg-tBrown bg-no-repeat bg-cover"></div>
+              <div class="flex-col items-center">
+                <div>
+                  <span class="text-[40px] text-[#fff] font-[600]">Place Bet</span>
+                  <span class="text-[36px] font-[700] text-[#FAA92F] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] ml-[10px] pt-[5px]">X2</span>
                 </div>
+                <span class="text-[28px] font-[500] text-[#5BEA58]">{{ bets.brown }}$</span>
+              </div>
             </button>
         </div>
     </div>
